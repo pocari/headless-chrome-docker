@@ -10,7 +10,7 @@ docker build -t chrome-headless .
 
 ## run
 
-print page title by javascript code result.
+print page title from javascript execution result.
 
 ```
 docker run --rm -it -v $(pwd):/var/ruby chrome-headless ruby /var/ruby/sample.rb
