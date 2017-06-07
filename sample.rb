@@ -12,17 +12,17 @@ def with_chrome
       ]
     }
   )
-  session = Selenium::WebDriver.for :chrome, desired_capabilities: caps
-  session.manage.timeouts.implicit_wait = 30
-  yield session
+  driver = Selenium::WebDriver.for :chrome, desired_capabilities: caps
+  driver.manage.timeouts.implicit_wait = 30
+  yield driver
 ensure
-  session.quit
+  driver.quit
 end
 
-with_chrome do |session|
+with_chrome do |driver|
   url = 'https://www.google.co.jp'
-  session.get url
-  name = session.execute_script(<<~EOS)
+  driver.get url
+  name = driver.execute_script(<<~EOS)
     return document.getElementsByTagName('title')[0].text
   EOS
   puts "'#{url}' title is '#{name}'"
