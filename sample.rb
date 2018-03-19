@@ -1,5 +1,5 @@
 require 'selenium-webdriver'
-require 'nokogiri'
+# require 'nokogiri'
 
 def with_chrome
   caps = Selenium::WebDriver::Remote::Capabilities.chrome(
