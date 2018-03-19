@@ -24,7 +24,7 @@ RUN set -ex \
 
 # chrome driver
 RUN set -ex \
-    && wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/2.33/chromedriver_linux64.zip \
+    && wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/2.37/chromedriver_linux64.zip \
     && unzip /tmp/chromedriver.zip chromedriver -d /usr/bin/ \
     && chmod ugo+rx /usr/bin/chromedriver \
     && rm /tmp/chromedriver.zip
