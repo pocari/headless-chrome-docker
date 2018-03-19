@@ -15,6 +15,8 @@ def with_chrome
   driver = Selenium::WebDriver.for :chrome, desired_capabilities: caps
   driver.manage.timeouts.implicit_wait = 30
   yield driver
+rescue => e
+  $stderr.puts(e.backtrace)
 ensure
   driver.quit
 end
